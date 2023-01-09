@@ -1,0 +1,34 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+char rmdelete(char *ptr,char delete,int l)
+{
+    int i=0,j=0;
+    for(i=0;i<l;i++)
+    {
+        if(ptr[i]==delete)
+        {
+            for(j=i;j<l;j++)
+            {
+                ptr[j]=ptr[j+1];
+            }
+            i--;
+            l--;
+        }
+    }
+    printf("after the deletion of character:%s\n",ptr);
+}
+int main()
+{
+    int l;
+    printf("enter the size of string:\n");
+    scanf("%d\n",&l);
+    printf("enter the string and deleting character:");
+    char delete;
+    
+    char *ptr=(char*)malloc(l*sizeof(char));
+    
+    scanf("%s %c",ptr,&delete);
+    char (*fptr)(char *,char ,int)=rmdelete;
+    fptr(ptr,delete,l);
+}

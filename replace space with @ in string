@@ -1,0 +1,57 @@
+#include<stdio.h>
+#include<string.h>
+char space(char *s,int l)
+{
+    int i=0;
+    for(i=0;i<l;i++)
+    {
+        if(s[i]==32)
+        {
+            s[i]='@';
+        }
+    }
+    printf("%s",s);
+}
+int main()
+{
+    char s[]="my name is ch kiran kumar";
+    int l=strlen(s);
+    printf("the length of the string:%d\n",l);
+    char (*fptr)(char *,int)=space;
+    fptr(s,l);
+}
+
+
+using malloc and fun pointer:
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+char space(char *ptr,int l)
+{
+    
+    int i=0;
+    for(i=0;i<l;i++) // it goes  upto to length.
+    {
+        if(ptr[i]==32) // first it check whether it is space or not space if space mean it enter into the if loop and it replace with "@"and while printing it will be  display with "@" in space .
+        {
+            ptr[i]='@';
+        }
+    }
+    printf("%s",ptr);
+}
+int main()
+{
+    
+    char *ptr;
+    int l=0;
+    printf("enter the string:");
+    scanf("%d",&l);
+    ptr=(char*)malloc(l*sizeof(char)+1);
+    printf("enter the string:");
+    for(int i=0;i<l;i++)
+    {
+        scanf("%c",ptr+i);
+    }
+    char (*fptr)(char *,int )=space;
+    fptr(ptr,l);
+}

@@ -9,3 +9,18 @@ int main()
     printf("%lu",ptr2-ptr);
 }
 output: 1.
+
+
+
+#include <stdio.h>
+
+int main()
+{
+    int i=20;
+    int *ptr=&i;
+    int *ptr2=++ptr; //
+    --ptr;
+    --ptr;
+    printf("%lu",ptr2-ptr);
+}
+output: 2.

@@ -24,3 +24,32 @@ int main()
     printf("%lu",ptr2-ptr);
 }
 output: 2.
+
+
+#include<stdio.h>
+int main(){
+	int i = 3;
+	int *j;
+	int **k;
+	j = &i;  // j is apointer and the k is also pointer both are holds the address of some variable.now the k is holds the address of j.and the j is pointer it is also holds the address of some another variable now is increments and it takes the some garbage values.
+	k = &j;
+	k++;
+	printf("%d ",**k);
+	return 0;
+    output:
+    garbage value.
+    
+    #include<stdio.h>
+int main(){
+	int i = 3;
+	int *j;
+	j = &i; // j is increments and the j is holds some variable will be increments and it shows the some garbage values and not intialized the next address of variable.
+	j++;
+	printf("%d ",*j);
+	return 0;
+}
+output:
+some garbage value.
+    
+}
+

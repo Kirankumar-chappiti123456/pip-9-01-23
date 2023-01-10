@@ -1,0 +1,32 @@
+#include<stdio.h>
+int amstr(int num)
+{
+    int r=0,re=0,num1=0;
+     num1=num;
+    while(num1!=0)
+    {
+        r=num1%10;
+        re=re+r*r*r;
+        num1=num1/10;
+    }
+    (re==num)?printf("amstrong number"):printf("not a amstrong number");
+}
+int main()
+{
+    int num;
+    printf("enter the number:");
+    scanf("%d",&num);
+    int (*fptr)(int)=amstr;
+    fptr(num);
+}
+
+logic :
+number:153
+do cube: 1*1*1=1
+         5*5*5=125
+         3*3*3=27
+         
+         taking the reaminder: num%153; here the 3 will be come out and 15 is present.
+         taking the result   : r=r+r1*r1*r1
+         and again : num1=num1/10; again 5 will enter into the while loop upto the condition false.
+         and at last checking num==result. if equal means amstrong number or not a amstrong number.
